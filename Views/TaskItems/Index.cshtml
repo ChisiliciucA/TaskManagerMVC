@@ -1,0 +1,27 @@
+@model List<TaskManagerMVC.Models.TaskItemViewModel>
+
+<h2>Lista Taskuri</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titlu</th>
+            <th>Descriere</th>
+            <th>Creat la</th>
+            <th>Finalizat</th>
+            <th>Utilizator</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@task.CreatedAt.ToShortDateString()</td>
+                <td>@(task.IsCompleted ? "✔" : "✘")</td>
+                <td>@task.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Adaugă Task</a>

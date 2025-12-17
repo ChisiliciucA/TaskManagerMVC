@@ -1,0 +1,23 @@
+@model TaskManagerMVC.Models.TaskItem
+
+<h2>Adaugă Task Nou</h2>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Titlu</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Descriere</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Finalizat</label>
+        <input asp-for="IsCompleted" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <label>Utilizator</label>
+        <select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-success">Salvează</button>
+</form>
+<a asp-action="Index">Înapoi</a>

@@ -1,0 +1,43 @@
+### GET toate task-urile
+GET http://localhost:5271/api/Tasks
+Accept: application/json
+
+###
+
+### GET task după ID
+GET http://localhost:5271/api/Tasks/1
+Accept: application/json
+
+###
+
+### POST - adaugă un task nou
+POST http://localhost:5271/api/Tasks
+Content-Type: application/json
+
+{
+  "title": "Scrie raportul",
+  "description": "Raportul lunar",
+  "isCompleted": false,
+  "createdAt": "2025-11-24T18:30:00",
+  "userEmail": "alina@example.com"
+}
+
+###
+
+### PUT - actualizează task-ul cu ID = 1
+PUT http://localhost:5271/api/Tasks/6
+Content-Type: application/json
+
+{
+  "id": 6,
+  "title": "Scrie raportul revizuit",
+  "description": "Raportul lunar actualizat",
+  "isCompleted": true,
+  "createdAt": "2025-11-24T19:00:00",
+  "userEmail": "alina@example.com"
+}
+
+###
+
+### DELETE - șterge task-ul cu ID = 1
+DELETE http://localhost:5271/api/Tasks/1

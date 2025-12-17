@@ -1,0 +1,28 @@
+@model TaskManagerMVC.Models.TaskViewModel
+
+<h2>Editare Task</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Titlu</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Descriere</label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Finalizat</label>
+        <input asp-for="IsCompleted" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <label>Data Creării</label>
+        <input asp-for="CreatedAt" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email utilizator</label>
+        <input asp-for="UserEmail" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvează modificările</button>
+</form>
+<a asp-action="Index">Înapoi</a>

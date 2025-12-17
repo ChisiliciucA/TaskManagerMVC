@@ -1,0 +1,11 @@
+@model TaskManagerMVC.Models.TaskViewModel
+
+<h2>Detalii Task</h2>
+<table class="table">
+    <tr><th>Titlu</th><td>@Model.Title</td></tr>
+    <tr><th>Descriere</th><td>@Model.Description</td></tr>
+    <tr><th>Finalizat</th><td>@Model.IsCompleted</td></tr>
+    <tr><th>Creat la</th><td>@Model.CreatedAt.ToShortDateString()</td></tr>
+    <tr><th>Email utilizator</th><td>@Model.UserEmail</td></tr>
+</table>
+<a asp-action="Index">Înapoi</a>

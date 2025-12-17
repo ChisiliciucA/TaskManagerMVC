@@ -1,0 +1,18 @@
+@model TaskManagerMVC.Models.TaskViewModel
+
+<h2>Confirmare ștergere</h2>
+<p>Ești sigură că vrei să ștergi acest task?</p>
+
+<table class="table">
+    <tr><th>Titlu</th><td>@Model.Title</td></tr>
+    <tr><th>Descriere</th><td>@Model.Description</td></tr>
+    <tr><th>Finalizat</th><td>@Model.IsCompleted</td></tr>
+    <tr><th>Creat la</th><td>@Model.CreatedAt.ToShortDateString()</td></tr>
+    <tr><th>Email utilizator</th><td>@Model.UserEmail</td></tr>
+</table>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Șterge</button>
+    <a asp-action="Index" class="btn btn-secondary">Anulează</a>
+</form>

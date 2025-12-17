@@ -1,0 +1,11 @@
+@{
+    ViewBag.Title = "Limită conversii";
+}
+
+<div class="alert alert-danger">
+    <p>@ViewBag.Message</p>
+</div>
+
+<button onclick="window.location.href='@Url.Action("Index","Tasks")'" class="btn btn-primary">
+    OK
+</button>
